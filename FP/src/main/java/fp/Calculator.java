@@ -3,7 +3,7 @@ package fp;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
-
+import java.util.ArrayList;
 public class Calculator {
 
 
@@ -11,7 +11,8 @@ public class Calculator {
      * este metodo devuelve el Class del object que le pasamos
      */
 	public static Class classTypeOf(Object x) {
-		throw  new NotImplementedException();
+			return x.getClass();
+
 	}
 
 
