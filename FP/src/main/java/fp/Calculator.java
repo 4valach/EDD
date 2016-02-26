@@ -20,10 +20,16 @@ public class Calculator {
      * devuelve una lista con los n números de la serie de fibonacci.
      */
 	public static List<Integer> fibonacci(int n) {
-		throw  new NotImplementedException();
-	}
-
-	/*
+			List<Integer> result = new ArrayList<Integer>();
+			if (n == 0){return result;}
+				result.add(1);
+				result.add(1);
+			 for (int i = 2; i < n; i++) {
+				 result.add(result.get(i-2) + result.get(i-1));
+			}
+				return result;
+		}
+/*
 	 * Escribir todos los números del number al 0 de step en step.
 	 */
 	public static int[] stepThisNumber(int number, int step) {
