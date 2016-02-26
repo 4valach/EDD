@@ -33,16 +33,41 @@ public class Calculator {
 	 * Escribir todos los números del number al 0 de step en step.
 	 */
 	public static int[] stepThisNumber(int number, int step) {
-		throw  new NotImplementedException();
+		int[] numero = {};
+		if(number == 0 || step == 0){return numero;}
+			List<Integer> result = new ArrayList();
+		while(number > step){
+		if(number - step > 0){
+			result.add(number -= step);
+			}
 		}
+	int resufinal[] = new int[result.size()];
+		for (int i = 0; i < resufinal.length; i++) {
+			resufinal[i] = result.get(i);
+		}
+	return resufinal;
+	}
+
 
 	/*
 	 * Módulo al que se le pasa un número entero del 0 al 20 y devuelve los
 	 * divisores que tiene.
 	 */
 	public static int[] divisors(int n) {
-		throw  new NotImplementedException();
-	}
+			if(n == 0){
+			return null;}
+
+			List<Integer> divisor = new ArrayList();
+				for (int i = n; i > 0; i--){
+				 divisor.add(i);
+				}
+
+		int result[] = new int[divisor.size()];
+		for (int i = 0; i < result.length; i++) {
+				result[i] = divisor.get(i);
+			}
+			return result;
+			}
 
 	/*
 	 * Toma como parámetros una cadena de caracteres y devuelve cierto si la cadena resulta ser un palíndromo
