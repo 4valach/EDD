@@ -73,7 +73,31 @@ public class Calculator {
 	 * Toma como parÃ¡metros una cadena de caracteres y devuelve cierto si la cadena resulta ser un palÃ­ndromo
 	 */
 	public static boolean checkIsPalindrome(String cadena) {
-		throw  new NotImplementedException();
+		if (cadena == "" || cadena == null) return false;
+		cadena = cadena.toUpperCase();
+		List<Character> list_char = new ArrayList();
+		char[][] acent = {{'Á', 'É', 'Í', 'Ó', 'Ú'}, {'À', 'È', 'Ì', 'Ò', 'Ù'}};
+		char[] noacent = {'A', 'E', 'I', 'O', 'U'};
+		for (int i = 0; i < cadena.length(); i++) {
+			if(Character.isLetter(cadena.charAt(i))){
+				char char_add = cadena.charAt(i);
+				for (int j = 0; j < acent.length; j++) {
+					for (int j2 = 0; j2 < acent[j].length; j2++) {
+						if (char_add == acent[j][j2]){
+							char_add = noacent[j2];
+							break;
+					}
+					}
+			}
+				list_char.add(char_add);
+		}
+	}
+		for (int i = 0; i < (list_char.size())/2; i++) {
+			if( list_char.get(i) != list_char.get(list_char.size() - 1 - i) ) {
+				return false;}
+			}
+				return true;
+
 	}
 
 	/*
