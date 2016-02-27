@@ -105,7 +105,34 @@ public class Calculator {
 	 * mostrar: cincuenta y seis
 	 */
 	public static String speakToMe(int n) {
-		throw  new NotImplementedException();
+		String result = "";
+		String unidad[] = {"cero", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez", "once", "doce", "trece", "catorce", "quince"};
+			if (n < unidad.length){
+					result = unidad[n];
+				}
+			if(n / 10 == 1 && n % 10 >= 6){
+					if (n % 10 == 6){
+						result = "dieciséis";
+						}
+					result = "dieci" + unidad[n % 10];
+				}
+
+				else if(n > 19 && n < 30){
+					if (n % 10 == 6){
+						result = "veintiseis";
+						}
+					else if (n == 20){
+						result = "veinte";
+						}
+					else{result = "veinti" + unidad[n % 20];}
+				}
+			String decena[] = {"","","", "treinta", "cuarenta", "cinquenta", "sesenta", "setenta", "ochenta", "noventa"};
+				if((n / 10) > 2){
+					if (n % 10 == 0){result = decena[n / 10];}
+					else{result = decena[n / 10] + " y " + unidad[n % 10];}
+				}
+				return (String.valueOf(result.charAt(0)).toUpperCase() + result.substring(1, result.length()));
+
 	}
 
 	/*
