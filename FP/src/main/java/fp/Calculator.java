@@ -140,13 +140,37 @@ public class Calculator {
 	 * dd-MM-yyyy
 	 */
 	public static boolean isLeapYear(String fecha) {
-		throw  new NotImplementedException();
+		int año = -1;
+
+		try{año = Integer.parseInt(fecha.substring(6,10));
+		}catch (Exception e){return false;}
+
+		if(año == 1900 || año == 2100 || año == 2200 || año == 2300){
+		return false;
+		}
+		else if(año % 4 == 0){
+			return true;
+		}
+
+		return false;
+
 	}
 
 	/*
 	 * este metodo devuelve cierto si la fecha es vÃ¡lida
 	 */
 	public static boolean isValidDate(String date) {
-		throw  new NotImplementedException();
+		int dia = -1, mes = -1, año = -1;
+		try{
+			dia = Integer.parseInt(date.substring(0,2));
+			mes = Integer.parseInt(date.substring(3,5));
+			año = Integer.parseInt(date.substring(6,10));
+		}catch(Exception e){
+		return false;}
+
+	if ((dia > 31) || (dia < 1) || (mes > 12) || (mes < 1) || (año < 1)){return false;}
+		if ((dia == 29) && (mes == 2) && (isLeapYear(date))){return true;}
+		else if (((dia <= 31) && (mes < 8) && (mes % 2 == 1)) || ((dia <= 31) && (mes >= 8) && (mes % 2 == 0))) {}
+		return true;
 	}
 }
