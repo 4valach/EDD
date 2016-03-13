@@ -17,7 +17,7 @@ public class Calculator {
 
 
 	/*
-     * devuelve una lista con los n números de la serie de fibonacci.
+     * devuelve una lista con los n nÃºmeros de la serie de fibonacci.
      */
 	public static List<Integer> fibonacci(int n) {
 			List<Integer> result = new ArrayList<Integer>();
@@ -30,7 +30,7 @@ public class Calculator {
 				return result;
 		}
 /*
-	 * Escribir todos los números del number al 0 de step en step.
+	 * Escribir todos los nÃºmeros del number al 0 de step en step.
 	 */
 	public static int[] stepThisNumber(int number, int step) {
 		int[] numero = {};
@@ -50,7 +50,7 @@ public class Calculator {
 
 
 	/*
-	 * Módulo al que se le pasa un número entero del 0 al 20 y devuelve los
+	 * MÃ³dulo al que se le pasa un nÃºmero entero del 0 al 20 y devuelve los
 	 * divisores que tiene.
 	 */
 	public static int[] divisors(int n) {
@@ -70,13 +70,13 @@ public class Calculator {
 			}
 
 	/*
-	 * Toma como parámetros una cadena de caracteres y devuelve cierto si la cadena resulta ser un palíndromo
+	 * Toma como parÃ¡metros una cadena de caracteres y devuelve cierto si la cadena resulta ser un palÃ­ndromo
 	 */
 	public static boolean checkIsPalindrome(String cadena) {
 		if (cadena == "" || cadena == null) return false;
 		cadena = cadena.toUpperCase();
 		List<Character> list_char = new ArrayList();
-		char[][] acent = {{'�', '�', '�', '�', '�'}, {'�', '�', '�', '�', '�'}};
+		char[][] acent = {{'Á', 'É', 'Í', 'Ó', 'Ú'}, {'À', 'È', 'Ì', 'Ò', 'Ù'}};
 		char[] noacent = {'A', 'E', 'I', 'O', 'U'};
 		for (int i = 0; i < cadena.length(); i++) {
 			if(Character.isLetter(cadena.charAt(i))){
@@ -101,7 +101,7 @@ public class Calculator {
 	}
 
 	/*
-	 * Pedir un número de 0 a 99 y mostrarlo escrito. Por ejemplo, para 56
+	 * Pedir un nÃºmero de 0 a 99 y mostrarlo escrito. Por ejemplo, para 56
 	 * mostrar: cincuenta y seis
 	 */
 	public static String speakToMe(int n) {
@@ -112,7 +112,7 @@ public class Calculator {
 				}
 			if(n / 10 == 1 && n % 10 >= 6){
 					if (n % 10 == 6){
-						result = "diecis�is";
+						result = "dieciséis";
 						}
 					result = "dieci" + unidad[n % 10];
 				}
@@ -136,19 +136,19 @@ public class Calculator {
 	}
 
 	/*
-	 * este metodo devuelve cierto si el año de la fecha es bisiesto fecha
+	 * este metodo devuelve cierto si el aÃ±o de la fecha es bisiesto fecha
 	 * dd-MM-yyyy
 	 */
 	public static boolean isLeapYear(String fecha) {
-		int a�o = -1;
+		int año = -1;
 
-		try{a�o = Integer.parseInt(fecha.substring(6,10));
+		try{año = Integer.parseInt(fecha.substring(6,10));
 		}catch (Exception e){return false;}
 
-		if(a�o == 1900 || a�o == 2100 || a�o == 2200 || a�o == 2300){
+		if(año == 1900 || año == 2100 || año == 2200 || año == 2300){
 		return false;
 		}
-		else if(a�o % 4 == 0){
+		else if(año % 4 == 0){
 			return true;
 		}
 
@@ -157,20 +157,21 @@ public class Calculator {
 	}
 
 	/*
-	 * este metodo devuelve cierto si la fecha es válida
+	 * este metodo devuelve cierto si la fecha es vÃ¡lida
 	 */
 	public static boolean isValidDate(String date) {
-		int dia = -1, mes = -1, a�o = -1;
+		int dia = -1, mes = -1, año = -1;
 		try{
 			dia = Integer.parseInt(date.substring(0,2));
 			mes = Integer.parseInt(date.substring(3,5));
-			a�o = Integer.parseInt(date.substring(6,10));
+			año = Integer.parseInt(date.substring(6,10));
 		}catch(Exception e){
 		return false;}
 
-	if ((dia > 31) || (dia < 1) || (mes > 12) || (mes < 1) || (a�o < 1)){return false;}
+	if ((dia > 31) || (dia < 1) || (mes > 12) || (mes < 1) || (año < 1)){return false;}
 		if ((dia == 29) && (mes == 2) && (isLeapYear(date))){return true;}
 		else if (((dia <= 31) && (mes < 8) && (mes % 2 == 1)) || ((dia <= 31) && (mes >= 8) && (mes % 2 == 0))) {}
 		return true;
 	}
 }
+
